@@ -63,11 +63,6 @@ export type ProgressBarProps = {
   trackColor?: string;
 
   /**
-   * A stretchable image to display as the progress bar.
-   */
-  progressImage?: ImageURISource | ImageURISource[];
-
-  /**
    * A stretchable image to display behind the progress bar.
    */
   trackImage?: ImageURISource | ImageURISource[];
@@ -140,7 +135,6 @@ function ProgressBar({
   trackColor = 'transparent',
   style,
   trackImage,
-  progressImage,
 }: ProgressBarProps) {
   const [width, setWidth] = React.useState(0);
   const progressValue = useValue(isAnimated ? 0 : progress);
@@ -228,7 +222,6 @@ function ProgressBar({
           },
         ]}
         // @ts-ignore
-        source={progressImage}
       />
     </ImageBackground>
   );
